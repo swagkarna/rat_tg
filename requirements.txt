@@ -1,0 +1,9 @@
+pyTelegramBotAPI
+requests
+Pillow
+platform-utils
+webbrowser
+subprocess
+opencv
+wave
+pyaudio
